@@ -37,24 +37,35 @@ function App() {
       <h2>Let's get started!</h2>
       {/* Components with starting letter capital its user defined custom
       component */}
+      {/* {expenses.forEach((expense) => {
+        <ExpenseItem
+          title={expense.title}
+          amount={expense.amount}
+          date={expense.date}
+          locationOfExpenditure={expense.locationOfExpenditure}
+        />;
+      })} */}
       <ExpenseItem
         title={expenses[0].title}
         amount={expenses[0].amount}
         date={expenses[0].date}
         locationOfExpenditure={expenses[0].locationOfExpenditure}
       />
+      ;
       <ExpenseItem
         title={expenses[1].title}
         amount={expenses[1].amount}
         date={expenses[1].date}
         locationOfExpenditure={expenses[1].locationOfExpenditure}
       />
+      ;
       <ExpenseItem
         title={expenses[2].title}
         amount={expenses[2].amount}
         date={expenses[2].date}
         locationOfExpenditure={expenses[2].locationOfExpenditure}
       />
+      ;
     </div>
   );
 }
