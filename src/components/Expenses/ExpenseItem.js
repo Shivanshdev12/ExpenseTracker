@@ -7,10 +7,10 @@ import "./ExpenseItem.css";
 function ExpenseItem(props) {
   const [title, setTitle] = useState(props.title);
   const [expense, setExpense] = useState(props.amount);
-  const deleteHandler = () => {
-    const el = document.getElementById(props.id);
-    el.remove();
-  };
+  // const deleteHandler = () => {
+  //   const el = document.getElementById(props.id);
+  //   el.remove();
+  // };
   const clickHandler = () => {
     setTitle("Changed");
     console.log(title);
@@ -20,7 +20,7 @@ function ExpenseItem(props) {
     console.log("Changed!");
   };
   return (
-    <Card className="expense-item" id={props.id}>
+    <Card className="expense-item">
       <ExpenseDate date={props.date} />
       <ExpenseDetails amount={expense} title={title} />
       <button onClick={clickHandler}>Change</button>

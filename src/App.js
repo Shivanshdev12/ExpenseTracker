@@ -32,11 +32,21 @@ function App() {
       date: new Date(2021, 5, 12),
       locationOfExpenditure: "Noida",
     },
+    {
+      id: "e5",
+      title: "New Desk (Wooden)",
+      amount: 450,
+      date: new Date(2021, 5, 12),
+      locationOfExpenditure: "Noida",
+    },
   ];
+  const addExpenseHandler = (expense) => {
+    console.log(expense);
+  };
   return (
     <div>
       <h1>Expense Tracker</h1>
-      <NewExpense />
+      <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses expenses={expenses} />
     </div>
   );
