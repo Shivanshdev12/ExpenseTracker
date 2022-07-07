@@ -4,7 +4,7 @@ import "./ExpenseForm.css";
 
 const ExpenseForm = (props) => {
   const [enteredTitle, setEnteredTitle] = useState("");
-  const [enteredAmount, setEnteredAmount] = useState("");
+  const [enteredAmount, setEnteredAmount] = useState(0);
   const [enteredDate, setEnteredDate] = useState("");
 
   const ChangeHandler = (event) => {
@@ -21,16 +21,16 @@ const ExpenseForm = (props) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    const expenseata = {
+    const expensedata = {
       title: enteredTitle,
-      amount: enteredAmount,
+      amount: Number(enteredAmount),
       date: new Date(enteredDate),
     };
 
-    props.onSaveExpenseDataHandler(expenseata);
+    props.onSaveExpenseDataHandler(expensedata);
 
     setEnteredTitle("");
-    setEnteredAmount("");
+    setEnteredAmount(0);
     setEnteredDate("");
   };
 
