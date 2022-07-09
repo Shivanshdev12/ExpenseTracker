@@ -21,17 +21,20 @@ function Expenses(props) {
         selected={filteredYear}
         onChangeFilter={filterChangeHandler}
       />
-      {res.map((expense) => {
-        return (
-          <ExpenseItem
-            key={expense.id}
-            title={expense.title}
-            amount={expense.amount}
-            date={expense.date}
-            id={expense.id}
-          />
-        );
-      })}
+      {res.length === 1 && <p>Only single Expense here. Please add more..</p>}
+      {res.length === 0 && <p>No expenses found.</p>}
+      {res.length > 0 &&
+        res.map((expense) => {
+          return (
+            <ExpenseItem
+              key={expense.id}
+              title={expense.title}
+              amount={expense.amount}
+              date={expense.date}
+              id={expense.id}
+            />
+          );
+        })}
     </Card>
   );
 }
