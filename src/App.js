@@ -42,7 +42,6 @@ function App() {
   };
   return (
     <div>
-      <h1>Expense Tracker</h1>
       <NewExpense onAddExpense={addExpenseHandler} />
       {console.log(expenses)}
       <Expenses expenses={expenses} />
